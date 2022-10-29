@@ -1,5 +1,14 @@
+<script setup lang="ts">
+const runtimeConfig = useRuntimeConfig()
+
+if (process.server) {
+  console.log(runtimeConfig.hogehoge)
+}
+
+</script>
+
 <template>
-  <div class="">
+  <div>
     it is top page
   </div>
 </template>
