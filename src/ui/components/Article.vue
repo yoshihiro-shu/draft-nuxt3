@@ -16,22 +16,10 @@
   </article>
 </template>
 
-<script lang="ts">
-import Article from '~/src/api/TopPage/definition'
-import { defineComponent, PropType } from '@nuxtjs/composition-api'
+<script setup lang="ts">
+import { TopPageArticle } from 'src/server/api/TopPage/type'
 
-export default defineComponent({
-  props:{
-    article:{
-      type: Object as PropType<Article>,
-      required: true
-    }
-  },
-  setup(props) {
-    const article: Article = props.article
-    return {
-      article
-    }
-  }
-})
+const props = defineProps<{
+  article: TopPageArticle
+}>()
 </script>
