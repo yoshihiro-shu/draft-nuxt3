@@ -28,7 +28,7 @@ class Tag {
   }
 }
 
-class Article {
+class TopPageArticle {
   id: number
   userId: number
   thumbnailUrl: string
@@ -56,4 +56,4 @@ class Article {
   }
 }
 
-export { Article }
+export { TopPageArticle }

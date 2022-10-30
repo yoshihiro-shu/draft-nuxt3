@@ -13,7 +13,7 @@ interface Tag {
   createdAt: Date
 }
 
-export interface Article {
+export interface TopPageArticle {
   id: number
   userId: number
   thumbnailUrl: string
