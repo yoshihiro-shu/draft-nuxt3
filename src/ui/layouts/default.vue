@@ -3,9 +3,8 @@
     <NavBar />
     <Header />
     <TopicNav />
-    <NuxtPage />
     <div class="container mx-auto flex flex-wrap py-6">
-      <!-- <Article /> -->
+      <NuxtPage />
       <SideBar />
     </div>
     <Footer />
