@@ -4,10 +4,10 @@ import path from 'path';
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   srcDir: 'src/ui/',
-  // components: {
-  //   global: true,
-  //   dirs: ['~/components']
-  // },
+  components: {
+    global: true,
+    dirs: ['~/components/']
+  },
   modules: ['@nuxtjs/tailwindcss'],
   resolve: {
     alias: {
