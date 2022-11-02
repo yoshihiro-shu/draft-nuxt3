@@ -1,23 +1,17 @@
 <script setup lang="ts">
-import { TopPageArticle } from '../../server/api/TopPage/type'
+import { TopPageResponse } from '../../server/api/TopPage/response'
 
-interface Response {
-  status: number
-  data: TopPageArticle[]
-}
+const topPageApiUrl = 'top'
 
 const runtimeConfig = useRuntimeConfig()
 const fuga = ref<string>()
-const topPageArticles = ref<TopPageArticle[]>()
 fuga.value = runtimeConfig.hugahuga
 
-const { data: data, pending, refresh, error } = await useFetch('top', {
+const { data:resTopPage, pending, error, refresh  } = await useFetch<TopPageResponse>(() => topPageApiUrl, {
   baseURL: runtimeConfig.baseURL,
   method: 'GET',
 })
 
-const res: Response = JSON.parse(data.value)
-topPageArticles.value = res.data
 
 </script>
 
@@ -26,8 +20,8 @@ topPageArticles.value = res.data
     <HogeHoge
       :text="fuga"
     />
-    <Article
-      v-for="(article) in topPageArticles"
+    <ArticleBox
+      v-for="(article) in resTopPage.data"
       :article="article"
       :key="article.id"
     />
