@@ -13,7 +13,15 @@ type Tag = {
   createdAt: Date
 }
 
-export type TopPageArticle = {
+type User = {
+  id: number
+  name: string
+  password: string
+  email: string
+  createdAt: Date
+}
+
+export type Article = {
   id: number
   userId: number
   thumbnailUrl: string
@@ -23,6 +31,7 @@ export type TopPageArticle = {
   createdAt: Date
   updatedAt: Date
   categoryId: number
+  User: User
   Category: Category
   Tags: Tag[]
 }

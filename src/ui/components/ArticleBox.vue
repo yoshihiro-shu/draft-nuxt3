@@ -17,9 +17,9 @@
 </template>
 
 <script setup lang="ts">
-import { TopPageArticle } from 'src/server/api/TopPage/type'
+import { Article } from 'src/server/api/TopPage/type'
 
 const props = defineProps<{
-  article: TopPageArticle
+  article: Article
 }>()
 </script>

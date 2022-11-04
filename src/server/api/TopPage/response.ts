@@ -1,6 +1,6 @@
-import { TopPageArticle } from "./type"
+import { Article } from "./type"
 
 export type TopPageResponse = {
   status: number
-  data: TopPageArticle[]
+  data: Article[]
 }
