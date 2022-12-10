@@ -1,11 +1,16 @@
 <script setup lang="ts">
-import { TopPageResponse } from '../../server/api/TopPage/response'
+import { TopPage } from '../../server/api/TopPage/response'
 
 const topPageApiUrl = 'top'
 
 const runtimeConfig = useRuntimeConfig()
 const fuga = ref<string>()
 fuga.value = runtimeConfig.hugahuga
+
+type TopPageResponse = {
+  status: number
+  data: TopPage
+}
 
 const { data:resTopPage, pending, error, refresh  } = await useFetch<TopPageResponse>(() => topPageApiUrl, {
   baseURL: runtimeConfig.baseURL,
@@ -21,11 +26,11 @@ const { data:resTopPage, pending, error, refresh  } = await useFetch<TopPageResp
       :text="fuga"
     />
     <ArticleBox
-      v-for="(article) in resTopPage.data"
+      v-for="(article) in resTopPage.data.article"
       :article="article"
       :key="article.id"
     />
     this is runtimeConfig: {{ fuga }}
-    <Pagination />
+    <Pagination :pager="resTopPage.data.pager"/>
   </section>
 </template>
