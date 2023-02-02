@@ -31,7 +31,7 @@ export type Article = {
   createdAt: Date
   updatedAt: Date
   categoryId: number
-  User: User
-  Category: Category
-  Tags: Tag[]
+  user: User
+  category: Category
+  tags: Tag[]
 }
