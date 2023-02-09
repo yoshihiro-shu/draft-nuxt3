@@ -7,11 +7,10 @@ const runtimeConfig = useRuntimeConfig()
 const fuga = ref<string>()
 fuga.value = runtimeConfig.hugahuga
 
-const { data:resTopPage, pending, error, refresh  } = await useFetch<TopPageResponse>(() => topPageApiUrl, {
+const { data: resTopPage, pending, error, refresh  } = await useFetch<TopPageResponse>(() => topPageApiUrl, {
   baseURL: runtimeConfig.baseURL,
   method: 'GET',
 })
-
 
 </script>
 
@@ -21,7 +20,7 @@ const { data:resTopPage, pending, error, refresh  } = await useFetch<TopPageResp
       :text="fuga"
     />
     <ArticleBox
-      v-for="(article) in resTopPage.data"
+      v-for="(article) in resTopPage.data.articles"
       :article="article"
       :key="article.id"
     />
