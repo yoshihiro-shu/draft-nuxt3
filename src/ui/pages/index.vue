@@ -24,7 +24,6 @@ const { data: resTopPage, pending, error, refresh  } = await useFetch<TopPageRes
       :article="article"
       :key="article.id"
     />
-    this is runtimeConfig: {{ fuga }}
-    <Pagination />
+    <Pagination :pager="resTopPage.data.pager"/>
   </section>
 </template>

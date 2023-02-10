@@ -1,4 +1,4 @@
 export type Pager = {
-  currentPager: number
-  lastPager: number
+  currentPage: number
+  lastPage: number
 }
